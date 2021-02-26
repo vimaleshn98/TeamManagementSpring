@@ -10,7 +10,7 @@
 		<version>2.3.8.RELEASE</version>
 	</parent>
 	<properties>
-  <sonar.projectKey>vimaleshn98_Mindspring</sonar.projectKey>
+  <sonar.projectKey>vimaleshn98_TeamManagementSpring</sonar.projectKey>
   <sonar.organization>vimaleshn98</sonar.organization>
   <sonar.host.url>https://sonarcloud.io</sonar.host.url>
 </properties>
