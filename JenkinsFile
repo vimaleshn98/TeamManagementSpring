@@ -68,6 +68,16 @@ pipeline{
         }
        }
      }
+
+     stage('upload to s3')
+     {
+         steps{
+             withCredentials([[$class: 'AmazonWebServicesCredentialsBinding', accessKeyVariable: 'AWS_ACCESS_KEY_ID', credentialsId: 'deploytos3', secretKeyVariable: 'AWS_SECRET_ACCESS_KEY']]) {
+            s3Upload(pathStyleAccessEnabled: true, payloadSigningEnabled: true,file:'	TeamManagement-0.0.1-SNAPSHOT.jar', bucket:'vimalesh', path:'target/*.jar')
+
+}
+         }
+     }
        
       
   
