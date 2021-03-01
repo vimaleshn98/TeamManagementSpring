@@ -72,7 +72,7 @@ pipeline{
      stage('upload to s3')
      {
          steps{
-             withCredentials([[$class: 'AmazonWebServicesCredentialsBinding', accessKeyVariable: 'AWS_ACCESS_KEY_ID', credentialsId: '6135d4f8-d199-4f02-8415-a2d51e4a2635', secretKeyVariable: 'AWS_SECRET_ACCESS_KEY']]) {
+             withCredentials([[$class: 'AwsBucketCredentialsBinding', credentialsId: '6135d4f8-d199-4f02-8415-a2d51e4a2635', passwordVariable: 'BUCKET_PASSWORD', usernameVariable: 'BUCKET_USER_NAME']]) {
             s3Upload(pathStyleAccessEnabled: true, payloadSigningEnabled: true,file:'	TeamManagement-0.0.1-SNAPSHOT.jar', bucket:'vimalesh-deploy', path:'target/*.jar')
 
           }
